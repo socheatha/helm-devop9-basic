@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myplants-ingress 
+  annotations: 
+   cert-manager.io/cluster-issuer: letsencrypt-prod
+ 
+spec:
+  ingressClassName: nginx 
+  tls: 
+    - hosts: 
+      - myplants.devnerd.store
+      secretName: myplants-secret
+  rules:
+  - host: myplants.devnerd.store
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: myplants-svc
+            port: 
+              name: http
