@@ -21,4 +21,4 @@ spec:
           service:
             name: myplants-svc
             port: 
-              name: http
+              number: 80 
