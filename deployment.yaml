@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: myplants-app
-        image: 69966/earthdx:78
-        #image: nginx
+        #image: 69966/earthdx:78
+        image: nginx
         ports:
         - containerPort: 80
